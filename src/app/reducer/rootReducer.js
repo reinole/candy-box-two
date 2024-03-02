@@ -1,6 +1,7 @@
-import { candiesReducer } from './candiesReducer'
-import { shopReducer } from './shopReducer';
 import React, { useReducer, createContext } from "react";
+import { candiesReducer, initialState as candiesInitial } from './candiesReducer'
+import { shopReducer, initialState as shopInitial } from './shopReducer';
+import { lollipopReducer, initialState as lollipopInitial } from "./lollipopReducer";
 
 const combineReducers = (slices) => (state, action) =>
     Object.keys(slices).reduce( // use for..in loop, if you prefer it
@@ -14,21 +15,14 @@ const combineReducers = (slices) => (state, action) =>
 export const StoreContext = createContext();
 
 const initialState = {
-    candies: {
-        candiesEaten: 0,
-        candiesThrown: 0,
-        lollipops: 0,
-        woodenSword: false,
-    },
-    shop: {
-        shopKeeperSeen: false,
-        tenLollipopsVisible: false,
-        swordsVisible: false,
-    },
+    candies: candiesInitial,
+    lollipops: lollipopInitial,
+    shop: shopInitial,
 };
 
 const rootReducer = combineReducers({
     candies: candiesReducer,
+    lollipops: lollipopReducer,
     shop: shopReducer,
 });
 

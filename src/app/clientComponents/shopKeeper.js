@@ -2,7 +2,8 @@
 
 import React, { useContext, useEffect } from "react";
 import { shopReducerTypes } from '../reducer/shopReducer'
-import { reducerTypes } from '../reducer/candiesReducer'
+import { candiesTypes } from '../reducer/candiesReducer'
+import { lollipopTypes } from '../reducer/lollipopReducer'
 import { StoreContext } from '../reducer/rootReducer'
 
 export const ShopKeeper = ({ candies, setCandies }) => {
@@ -22,12 +23,12 @@ export const ShopKeeper = ({ candies, setCandies }) => {
 
     const buyLollipop = (candies, lollipops) => {
         if (lollipops === 10) {
-            dispatch({ type: reducerTypes.BUY_TEN_LOLLIPOPS })
+            dispatch({ type: lollipopTypes.BUY_TEN_LOLLIPOPS })
             setCandies(candies - 500)
         }
 
         if (lollipops === 1) {
-            dispatch({ type: reducerTypes.BUY_SINGLE_LOLLIPOP })
+            dispatch({ type: lollipopTypes.BUY_SINGLE_LOLLIPOP })
             setCandies(candies - 60)
         }
     }
@@ -42,7 +43,7 @@ export const ShopKeeper = ({ candies, setCandies }) => {
             <div>
                 <button disabled={candies < 60} onClick={() => buyLollipop(candies, 1)}>Buy 1 lollipop (60 candies)</button>
                 {state.shop.tenLollipopsVisible && <button disabled={candies < 500} onClick={() => buyLollipop(candies, 10)}>Buy 10 lollipop (500 candies)</button>}
-                <button disabled={candies < 150 || state.candies.woodenSword} onClick={() => dispatch({ type: reducerTypes.BUY_WOODEN_SWORD })}>Buy a wooden sword (150 candies)</button>
+                <button disabled={candies < 150 || state.candies.woodenSword} onClick={() => dispatch({ type: candiesTypes.BUY_WOODEN_SWORD })}>Buy a wooden sword (150 candies)</button>
             </div>
         </div>
     );

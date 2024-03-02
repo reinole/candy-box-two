@@ -2,7 +2,7 @@
 
 import { useState, useContext, useEffect } from "react"
 
-import { reducerTypes } from '../reducer/candiesReducer'
+import { candiesTypes } from '../reducer/candiesReducer'
 import { ShopKeeper } from "./shopKeeper"
 import { StoreContext } from '../reducer/rootReducer'
 
@@ -21,19 +21,19 @@ export const CandiesCounter = () => {
     }, [])
 
     const throwCandies = (candies) => {
-        dispatch({ type: reducerTypes.THROW, payload: 10 })
+        dispatch({ type: candiesTypes.THROW, payload: 10 })
         setCandies(candies - 10)
     }
 
     const eatCandies = (candies) => {
-        dispatch({ type: reducerTypes.EAT, payload: candies })
+        dispatch({ type: candiesTypes.EAT, payload: candies })
         setCandies(0)
     }
 
     return (
         <div className="flex flex-col">
             <span>You have {candies} candies!</span>
-            <span>You have {state.candies.lollipops} lollipops!</span>
+            <span>You have {state.lollipops.lollipops} lollipops!</span>
             <span>You have eaten {state.candies.candiesEaten}</span>
             <span>You have thrown {state.candies.candiesThrown} candies on the ground</span>
             <div className="flex flex-col">

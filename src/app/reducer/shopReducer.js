@@ -1,4 +1,4 @@
-export const shopInitialState = {
+export const initialState = {
     shopKeeperSeen: false,
     tenLollipopsVisible: false,
     swordsVisible: false,
