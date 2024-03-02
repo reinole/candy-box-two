@@ -1,10 +1,7 @@
 'use client'
 
-import { createContext } from "react";
 import { CandiesCounter } from "./clientComponents/candiesCounter";
 import { StoreProvider } from "./reducer/rootReducer";
-
-export const GameData = createContext();
 
 export default function Home() {
   return (
