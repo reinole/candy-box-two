@@ -1,0 +1,22 @@
+
+Available candies:
+Candy merchant appears on 60 saved candies, with buy "lollipop" for 60 candies
+Candy merchant "wooden sword" on 150 candies
+Candy merchent "copper sword" 300 candies
+Candy merchant "buy 10 lollipop" 500, "have 500 candies"
+
+buy "wooden sword"  Nav opens [Candy box][Inventory][Quest] 
+
+Win peaceful forrest -> Can plant lollipop on lollipop farm
+
+LP FARM: 
+1 planted -> 1 lp/day 
+2 planted -> 4 lp/day
+3 planted -> 9 lp/day
+4 -> 16 lp/day
+5 -> 1 lp/hour
+6 -- " --
+7 -> 2 lp/hour
+8 -- " --
+9 -> 3 lp/hour
+10 -> 4 lp/hour
