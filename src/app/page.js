@@ -1,16 +1,14 @@
 'use client'
 
-import { useReducer, createContext } from "react";
+import { createContext } from "react";
 import { CandiesCounter } from "./clientComponents/candiesCounter";
-import { reducer, initialState } from "./reducer/candiesReducer";
+import { StoreProvider } from "./reducer/rootReducer";
 
 export const GameData = createContext();
 
 export default function Home() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
-    <GameData.Provider value={[state, dispatch]}>
+    <StoreProvider>
       <main>
         <div>
           <button>Save</button>
@@ -22,6 +20,6 @@ export default function Home() {
           <CandiesCounter />
         </div>
       </main>
-    </GameData.Provider>
+    </StoreProvider>
   );
 }

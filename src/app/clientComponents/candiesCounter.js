@@ -3,12 +3,12 @@
 import { useState, useContext, useEffect } from "react"
 
 import { reducerTypes } from '../reducer/candiesReducer'
-import { GameData } from '../page'
 import { ShopKeeper } from "./shopKeeper"
+import { StoreContext } from '../reducer/rootReducer'
 
 export const CandiesCounter = () => {
-    const [state, dispatch] = useContext(GameData)
-    const [candies, setCandies] = useState(55)
+    const [state, dispatch] = useContext(StoreContext)
+    const [candies, setCandies] = useState(2300)
 
     useEffect(() => {
         const intervalCandies = setInterval(() => {
@@ -33,9 +33,9 @@ export const CandiesCounter = () => {
     return (
         <div className="flex flex-col">
             <span>You have {candies} candies!</span>
-            <span>You have {state.lollipops} lollipops!</span>
-            <span>You have eaten {state.candiesEaten}</span>
-            <span>You have thrown {state.candiesThrown} candies on the ground</span>
+            <span>You have {state.candies.lollipops} lollipops!</span>
+            <span>You have eaten {state.candies.candiesEaten}</span>
+            <span>You have thrown {state.candies.candiesThrown} candies on the ground</span>
             <div className="flex flex-col">
                 <button disabled={candies === 0} onClick={() => eatCandies(candies)}>Eat all the candies</button>
                 <button disabled={candies < 10} onClick={() => throwCandies(candies)}>Throw 10 candies on the floor</button>

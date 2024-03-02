@@ -2,7 +2,8 @@
 Available candies:
 Candy merchant appears on 60 saved candies, with buy "lollipop" for 60 candies
 Candy merchant "wooden sword" on 150 candies
-Candy merchent "copper sword" 300 candies
+Candy merchant "copper sword" after wooden sword
+Candy merchant "Iron sword" after copper sword
 Candy merchant "buy 10 lollipop" 500, "have 500 candies"
 
 buy "wooden sword"  Nav opens [Candy box][Inventory][Quest] 
